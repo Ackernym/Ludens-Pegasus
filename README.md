@@ -2,9 +2,9 @@
 
 - Luden — a minimalist theme for Pegasus Frontend, inspired by [Ludo Frontend](https://ludo.libretro.com/) and focused on clean visuals and smooth navigation.
 
-![screen](https://github.com/ZagonAb/Luden/blob/b9f72206f5d45eb6a0d3a4c7627c17f77d834944/.meta/screenshots/screen0.png)
+![screen](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen0.png)
 
-![screen1](https://github.com/ZagonAb/Luden/blob/b9f72206f5d45eb6a0d3a4c7627c17f77d834944/.meta/screenshots/screen1.png)
+![screen1](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen1.png)
 
 ### 🧩 Inspiration
 
@@ -26,9 +26,5 @@ These assets are distributed under the terms described in the repository’s [CO
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-This project is licensed under the **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International License**.  
+This project is licensed under the **Creative Commons Attribution–NonCommercial–ShareAlike 4.0 International License (CC BY-NC-SA 4.0)**.  
 You are free to use, share, and adapt this work **as long as you provide proper attribution**, **do not use it for commercial purposes**, and **distribute any derivative works under the same license**.
-
-**Credits:**  
-Some graphical elements (icons and UI assets) are derived from the [RetroArch Assets repository](https://github.com/libretro/retroarch-assets) by the Libretro Team, used under compatible terms.
-
