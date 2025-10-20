@@ -136,7 +136,7 @@ ListView {
                     width: gameImage.paintedWidth + 6 * vpx
                     height: gameImage.paintedHeight + 6 * vpx
                     color: "transparent"
-                    border.color: "white"
+                    border.color: textPrimary
                     border.width: 3 * vpx
                     radius: 2 * vpx
                 }

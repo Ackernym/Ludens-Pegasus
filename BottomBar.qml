@@ -4,6 +4,7 @@ Rectangle {
     id: bar
 
     property bool inGameView: false
+    property string navigateIcon: inGameView ? "assets/images/icons/navigate2.png" : "assets/images/icons/navigate.png"
 
     color: "#000000"
 
@@ -16,7 +17,7 @@ Rectangle {
         spacing: 40 * vpx
 
         BarButton {
-            iconSource: "assets/images/icons/navigate.png"
+            iconSource: bar.navigateIcon
             label: "Navigate"
         }
 

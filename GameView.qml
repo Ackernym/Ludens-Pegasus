@@ -132,7 +132,7 @@ FocusScope {
             if (api.keys.isCancel(event)) {
                 event.accepted = true
                 backRequested()
-            } else if (api.keys.isAccept(event)) {
+            } else if (!event.isAutoRepeat && api.keys.isAccept(event)) {
                 event.accepted = true
                 launchGame()
             }
@@ -143,6 +143,24 @@ FocusScope {
             else {
 
                 event.accepted = false
+            }
+        }
+
+        Keys.onUpPressed: {
+            event.accepted = true
+            if (currentIndex > 0) {
+                currentIndex--
+            } else {
+                currentIndex = count - 1
+            }
+        }
+
+        Keys.onDownPressed: {
+            event.accepted = true
+            if (currentIndex < count - 1) {
+                currentIndex++
+            } else {
+                currentIndex = 0
             }
         }
         function toggleFavorite() {
