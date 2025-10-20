@@ -7,22 +7,64 @@ FocusScope {
 
     property int actualCurrentIndex: 0
     property int collectionIndex: 0
+    property bool modelInitialized: false
 
     CollectionsModel {
         id: collectionsModelManager
+
+        onModelBuilt: {
+            console.log("Model built, count:", model.count)
+            restoreInitialIndex()
+        }
+
+        Component.onCompleted: {
+            console.log("CollectionsModel component completed")
+        }
     }
 
     function setInitialIndex(index) {
+        console.log("Setting initial index to:", index)
         if (index >= 0 && index < collectionsModelManager.model.count) {
             actualCurrentIndex = index
             collectionList.currentIndex = index
             collectionList.positionViewAtIndex(index, ListView.Center)
+            modelInitialized = true
+        } else if (collectionsModelManager.model.count > 0) {
+            actualCurrentIndex = 0
+            collectionList.currentIndex = 0
+            collectionList.positionViewAtIndex(0, ListView.Center)
+            modelInitialized = true
+        }
+    }
+
+    function restoreInitialIndex() {
+        console.log("Restoring initial index...")
+        var lastIndex = api.memory.get('collectionIndex')
+        console.log("Last index from memory:", lastIndex)
+
+        if (lastIndex !== undefined && lastIndex !== null) {
+            restoreTimer.lastIndex = lastIndex
+            restoreTimer.start()
+        } else {
+            setInitialIndex(0)
+        }
+    }
+
+    Timer {
+        id: restoreTimer
+        property int lastIndex: 0
+        interval: 100
+        onTriggered: {
+            console.log("Timer triggered, setting index to:", lastIndex)
+            setInitialIndex(lastIndex)
         }
     }
 
     Component.onCompleted: {
+        console.log("CollectionView component completed")
         if (collectionsModelManager.modelReady) {
-            restoreIndex()
+            console.log("Model already ready on CollectionView completion")
+            restoreInitialIndex()
         }
     }
 
@@ -132,7 +174,10 @@ FocusScope {
         }
 
         onCurrentIndexChanged: {
-            actualCurrentIndex = currentIndex
+            if (modelInitialized) {
+                actualCurrentIndex = currentIndex
+                api.memory.set('collectionIndex', actualCurrentIndex)
+            }
         }
 
         focus: true
@@ -170,7 +215,6 @@ FocusScope {
             top: collectionList.bottom
             topMargin: 40 * vpx
         }
-
         spacing: 25 * vpx
 
         Text {
@@ -206,6 +250,7 @@ FocusScope {
         if (collectionsModelManager.model.count > 0) {
             api.memory.set('collectionIndex', actualCurrentIndex)
             var selectedCollection = collectionsModelManager.model.get(actualCurrentIndex)
+
             var collectionObject = {
                 name: selectedCollection.name,
                 shortName: selectedCollection.shortName,

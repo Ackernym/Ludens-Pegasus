@@ -79,6 +79,7 @@ Item {
         }
 
         modelReady = true
+        modelBuilt()
     }
 
     function getCollection(index) {

@@ -141,6 +141,7 @@ FocusScope {
                 toggleFavorite()
             }
             else {
+
                 event.accepted = false
             }
         }
@@ -150,6 +151,7 @@ FocusScope {
                 currentGame.favorite = !currentGame.favorite
                 console.log("Game favorite status toggled:", currentGame.title, "Favorite:", currentGame.favorite)
                 currentIndexChanged()
+
                 favoriteNotification.show(currentGame.favorite, Utils.cleanGameTitle(currentGame.title))
             }
         }

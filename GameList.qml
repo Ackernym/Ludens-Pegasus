@@ -53,10 +53,12 @@ ListView {
                 ctx.clearRect(0, 0, width, height)
 
                 if (!isCurrent) return
+
                     var cornerRadius = 10 * vpx
                     var triangleWidth = 20 * vpx
                     var triangleHeight = 18 * vpx
                     var triangleY = height / 2
+
                     ctx.beginPath()
                     ctx.moveTo(triangleHeight + cornerRadius, 0)
                     ctx.lineTo(width - cornerRadius, 0)
@@ -70,10 +72,13 @@ ListView {
                     ctx.lineTo(triangleHeight, triangleY - triangleWidth/2)
                     ctx.lineTo(triangleHeight, cornerRadius)
                     ctx.arcTo(triangleHeight, 0, triangleHeight + cornerRadius, 0, cornerRadius)
+
                     ctx.closePath()
+
                     var hueColor = root.getHueColor(collectionIndex)
                     ctx.fillStyle = hueColor
                     ctx.fill()
+
                     ctx.strokeStyle = Qt.darker(hueColor, 1.2)
                     ctx.lineWidth = 2 * vpx
                     ctx.stroke()
@@ -87,7 +92,7 @@ ListView {
         Row {
             anchors {
                 fill: parent
-                leftMargin: isCurrent ? 35 * vpx : 10 * vpx
+                leftMargin: isCurrent ? 35 * vpx : 70 * vpx
                 rightMargin: 15 * vpx
                 topMargin: isCurrent ? 15 * vpx : 3 * vpx
                 bottomMargin: isCurrent ? 15 * vpx : 3 * vpx

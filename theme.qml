@@ -12,8 +12,10 @@ FocusScope {
     property color textPrimary: "#ffffff"
     property color textSecondary: "#e5e5e5"
     property bool isLightTheme: false
+
     readonly property real vpx: Math.min(width, height) / 720
     readonly property real hexSize: 180 * vpx
+
     property real hueSaturation: 0.8
     property real hueLightness: 0.59
 
@@ -33,10 +35,12 @@ FocusScope {
         }
 
         saveThemeSettings()
+
         root.isLightThemeChanged()
     }
 
     function getHueColor(index) {
+
         var totalCollections = 0
 
         if (collectionView &&
