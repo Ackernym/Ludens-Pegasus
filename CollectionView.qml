@@ -184,9 +184,11 @@ FocusScope {
         Keys.onPressed: {
             if (api.keys.isAccept(event)) {
                 event.accepted = true
+                soundManager.playOk()
                 selectCurrentCollection()
             } else if (api.keys.isLeft(event)) {
                 event.accepted = true
+                soundManager.playDown()
                 if (currentIndex > 0) {
                     currentIndex--
                 } else {
@@ -194,6 +196,7 @@ FocusScope {
                 }
             } else if (api.keys.isRight(event)) {
                 event.accepted = true
+                soundManager.playUp()
                 if (currentIndex < collectionsModelManager.model.count - 1) {
                     currentIndex++
                 } else {
@@ -201,9 +204,12 @@ FocusScope {
                 }
             } else if (api.keys.isFilters(event)) {
                 event.accepted = true
+                soundManager.playOk()
                 globalColorConfig.focus = true
                 globalColorConfig.currentIndex = 0
                 focus = false
+            } else if (api.keys.isCancel(event)) {
+                soundManager.playCancel()
             }
         }
     }

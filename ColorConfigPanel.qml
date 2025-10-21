@@ -482,12 +482,14 @@ FocusScope {
     Keys.onPressed: {
         if (api.keys.isCancel(event)) {
             event.accepted = true
+            soundManager.playCancel()
             focus = false
             if (collectionListView) {
                 collectionListView.focus = true
             }
         } else if (api.keys.isLeft(event)) {
             event.accepted = true
+            soundManager.playDown()
             if (currentIndex > 0) {
                 currentIndex--
             } else {
@@ -495,6 +497,7 @@ FocusScope {
             }
         } else if (api.keys.isRight(event)) {
             event.accepted = true
+            soundManager.playUp()
             if (currentIndex < 3) {
                 currentIndex++
             } else {
@@ -502,12 +505,15 @@ FocusScope {
             }
         } else if (api.keys.isUp(event)) {
             event.accepted = true
+            soundManager.playUp()
             adjustValue(0.05)
         } else if (api.keys.isDown(event)) {
             event.accepted = true
+            soundManager.playDown()
             adjustValue(-0.05)
         } else if (api.keys.isAccept(event)) {
             event.accepted = true
+            soundManager.playOk()
             if (currentIndex === 2) {
                 resetButton.animateResetButton()
                 root.hueSaturation = 0.8

@@ -19,6 +19,10 @@ FocusScope {
     property real hueSaturation: 0.8
     property real hueLightness: 0.59
 
+    SoundEffects {
+        id: soundManager
+    }
+
     function toggleThemeMode(lightTheme) {
         if (lightTheme) {
             root.bgPrimary = "#dddddd"

@@ -131,9 +131,11 @@ FocusScope {
         Keys.onPressed: {
             if (api.keys.isCancel(event)) {
                 event.accepted = true
+                soundManager.playCancel()
                 backRequested()
             } else if (!event.isAutoRepeat && api.keys.isAccept(event)) {
                 event.accepted = true
+                soundManager.playOk()
                 launchGame()
             }
             else if (api.keys.isDetails(event)) {
@@ -141,13 +143,13 @@ FocusScope {
                 toggleFavorite()
             }
             else {
-
                 event.accepted = false
             }
         }
 
         Keys.onUpPressed: {
             event.accepted = true
+            soundManager.playUp()
             if (currentIndex > 0) {
                 currentIndex--
             } else {
@@ -157,18 +159,25 @@ FocusScope {
 
         Keys.onDownPressed: {
             event.accepted = true
+            soundManager.playDown()
             if (currentIndex < count - 1) {
                 currentIndex++
             } else {
                 currentIndex = 0
             }
         }
+
         function toggleFavorite() {
             if (currentGame) {
                 var wasFavorite = currentGame.favorite
                 currentGame.favorite = !currentGame.favorite
                 console.log("Game favorite status toggled:", currentGame.title, "Favorite:", currentGame.favorite)
                 currentIndexChanged()
+                if (currentGame.favorite) {
+                    soundManager.playNotice()
+                } else {
+                    soundManager.playNoticeBack()
+                }
 
                 favoriteNotification.show(currentGame.favorite, Utils.cleanGameTitle(currentGame.title))
             }
