@@ -1,16 +1,16 @@
-# 🎮 Luden
+# Luden
 
-**Luden** — a minimalist theme for **Pegasus Frontend**, inspired by [Ludo Frontend](https://ludo.libretro.com/) and focused on clean visuals, smooth navigation, and retro aesthetics.
+- Luden — a minimalist theme for Pegasus Frontend, inspired by [Ludo Frontend](https://ludo.libretro.com/) and focused on clean visuals and smooth navigation.
 
 ![screen](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen0.png)
+
 ![screen1](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen1.png)
 
----
 
 ## 🧩 Inspiration
 
-**Luden** is based on and closely follows the design of [Ludo Frontend](https://ludo.libretro.com), an open-source game launcher developed by the **Libretro Team**.  
-It faithfully adapts Ludo’s minimalist interface and behavior to the **Pegasus Frontend** environment, ensuring compatibility and preserving the original visual identity.
+**Luden** takes visual inspiration from [Ludo Frontend](https://ludo.libretro.com), an open-source game launcher developed by the **Libretro Team**.  
+It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** environment, adapting its design language for a smooth and modern user experience.
 
 ---
 
@@ -28,27 +28,10 @@ It faithfully adapts Ludo’s minimalist interface and behavior to the **Pegasus
 
 ---
 
-## 📦 Installation
+## Installation
 
-[Download the latest version](https://github.com/ZagonAb/Luden/archive/refs/heads/main.zip)  
-and extract the theme to your [Pegasus theme directory](http://pegasus-frontend.org/docs/user-guide/installing-themes).  
-You can then select **Luden** from the Pegasus settings menu.
-
----
+[Download](https://github.com/ZagonAb/Luden/archive/refs/heads/main.zip) and extract the theme to your [theme directory](http://pegasus-frontend.org/docs/user-guide/installing-themes). You can then select it from the Pegasus settings menu.
 
 ## 📜 License
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
-
-The **Luden** theme is distributed under the [CC BY-NC-SA 4.0 license](https://creativecommons.org/licenses/by-nc-sa/4.0/),  
-which allows sharing and adaptation for non-commercial purposes, provided attribution is given and derivatives are shared alike.
-
----
-
-### 💬 Acknowledgments
-
-Special thanks to the **Libretro Team** for their open-source contributions to the retro gaming community  
-and for inspiring the clean design philosophy behind both Ludo and RetroArch.
-
----
-
