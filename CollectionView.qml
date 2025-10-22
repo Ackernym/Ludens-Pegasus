@@ -188,7 +188,7 @@ FocusScope {
                 selectCurrentCollection()
             } else if (api.keys.isLeft(event)) {
                 event.accepted = true
-                soundManager.playDown()
+                soundManager.playUp()
                 if (currentIndex > 0) {
                     currentIndex--
                 } else {
@@ -196,7 +196,7 @@ FocusScope {
                 }
             } else if (api.keys.isRight(event)) {
                 event.accepted = true
-                soundManager.playUp()
+                soundManager.playDown()
                 if (currentIndex < collectionsModelManager.model.count - 1) {
                     currentIndex++
                 } else {
