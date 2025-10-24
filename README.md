@@ -2,9 +2,9 @@
 
 - Luden — a minimalist theme for Pegasus Frontend, inspired by [Ludo Frontend](https://ludo.libretro.com/) and focused on clean visuals and smooth navigation.
 
-![screen](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen0.png)
+![screen](https://github.com/ZagonAb/Luden/blob/b2dd880fdb9419651c98719737552b1badd30e9d/.meta/screenshots/screen0.png)
 
-![screen1](https://github.com/ZagonAb/Luden/blob/a532de6be5f98e77b43d84f2ef3bc66b054a0566/.meta/screenshots/screen1.png)
+![screen1](https://github.com/ZagonAb/Luden/blob/b2dd880fdb9419651c98719737552b1badd30e9d/.meta/screenshots/screen1.png)
 
 
 ## 🧩 Inspiration
