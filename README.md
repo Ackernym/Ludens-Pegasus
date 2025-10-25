@@ -43,3 +43,10 @@ Cualquier aporte, por pequeño que sea, me ayuda a seguir mejorando y manteniend
 
 [![Apoyar en PayPal](https://img.shields.io/badge/💖%20Donar%20-%20PayPal-0070ba?style=for-the-badge)](https://paypal.me/ZagonAb)
 
+----
+
+### 🎮 Mantené vivo el espíritu retro
+
+[![Apoyar en PayPal](https://img.shields.io/badge/☕%20Invitame%20un%20café%20-%20PayPal-ff69b4?style=for-the-badge)](https://paypal.me/ZagonAb)
+
+
