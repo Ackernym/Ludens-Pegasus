@@ -37,25 +37,12 @@ It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ### 💖 Apoyá mi trabajo  
-Creo temas para **Pegasus Frontend** por pura pasión por los juegos clásicos y la comunidad.  
-Todos mis temas se desarrollan de forma libre y gratuita, pero si querés agradecer o ayudarme a seguir creando, podés dejar una donación voluntaria.  
-Cualquier aporte, por pequeño que sea, me ayuda a seguir mejorando y manteniendo estos proyectos ❤️  
+Creo temas para **Pegasus Frontend** por pura pasión por los juegos clásicos y la comunidad.
+Todos mis temas se desarrollan de forma libre y gratuita, pero si querés agradecer o ayudarme a seguir creando y mejorando los existentes, podés dejar una donación voluntaria.
+Cualquier aporte, por pequeño que sea, me ayuda a seguir mejorando y manteniendo estos proyectos 👾
 
-[![Apoyar en PayPal](https://img.shields.io/badge/💖%20Donar%20-%20PayPal-0070ba?style=for-the-badge)](https://paypal.me/ZagonAb)
+[![Apoyar en PayPal](https://img.shields.io/badge/💖%20Donate%20-%20PayPal-0070ba?style=for-the-badge)](https://paypal.me/ZagonAb)
 
-----
-
-### 🎮 Mantené vivo el espíritu retro
-
-[![Apoyar en PayPal](https://img.shields.io/badge/☕%20Invitame%20un%20café%20-%20PayPal-ff69b4?style=for-the-badge)](https://paypal.me/ZagonAb)
-
-### 💖 Apoyá el proyecto
-
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://paypal.me/ZagonAb)
-
-### ☕ Apoyá mi trabajo
-
-[![Donar con PayPal](https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif)](https://paypal.me/ZagonAb)
 
 
 
