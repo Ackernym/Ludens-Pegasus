@@ -36,12 +36,13 @@ It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** 
 
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
-### 💖 Apoyá mi trabajo  
-Creo temas para **Pegasus Frontend** por pura pasión por los juegos clásicos y la comunidad.
-Todos mis temas se desarrollan de forma libre y gratuita, pero si querés agradecer o ayudarme a seguir creando y mejorando los existentes, podés dejar una donación voluntaria.
-Cualquier aporte, por pequeño que sea, me ayuda a seguir mejorando y manteniendo estos proyectos 👾
+### 💖 Support My Work  
+I create **Pegasus Frontend** themes purely out of passion for classic games and the retro community.  
+All my themes are developed freely and shared with everyone, but if you'd like to show your appreciation or help me keep creating and improving them, you can leave a voluntary donation.  
+Every contribution, no matter how small, helps me continue improving and maintaining these projects 👾  
 
-[![Apoyar en PayPal](https://img.shields.io/badge/💖%20Donate%20-%20PayPal-0070ba?style=for-the-badge)](https://paypal.me/ZagonAb)
+[![Support on PayPal](https://img.shields.io/badge/💖%20Donate%20-%20PayPal-0070ba?style=for-the-badge)](https://paypal.me/ZagonAb)
+
 
 
 
