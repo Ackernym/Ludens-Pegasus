@@ -9,7 +9,7 @@
 
 ## 🧩 Inspiration
 
-**Luden** takes visual inspiration from [Ludo Frontend](https://ludo.libretro.com), an open-source game launcher developed by the **Libretro Team**.  
+**Ludens** takes visual inspiration from [Ludo Frontend](https://ludo.libretro.com), an open-source game launcher developed by the **Libretro Team**.  
 It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** environment, adapting its design language for a smooth and modern user experience.
 
 ---
@@ -17,7 +17,7 @@ It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** 
 ## 🎨 Assets and Credits
 
 - **Sound Effects:**  
-  Some sound effects used in **Luden** are derived from [Ludo Frontend](https://ludo.libretro.com/) by the **Libretro Team**.  
+  Some sound effects used in **Ludens** are derived from [Ludo Frontend](https://ludo.libretro.com/) by the **Libretro Team**.  
   Licensed under the [GPL-3.0 license](https://www.gnu.org/licenses/gpl-3.0.html).  
   Credit goes to the original Ludo Frontend project for their audio design and inspiration.
 
@@ -30,7 +30,7 @@ It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** 
 
 ## Installation
 
-[Download](https://github.com/ZagonAb/Luden/archive/refs/heads/main.zip) and extract the theme to your [theme directory](http://pegasus-frontend.org/docs/user-guide/installing-themes). You can then select it from the Pegasus settings menu.
+[Download](https://github.com/ZagonAb/Ludens/archive/refs/heads/main.zip) and extract the theme to your [theme directory](http://pegasus-frontend.org/docs/user-guide/installing-themes). You can then select it from the Pegasus settings menu.
 
 ## 📜 License
 
