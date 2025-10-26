@@ -193,7 +193,33 @@ FocusScope {
 
     function launchGame() {
         if (gameList.currentGame) {
+            console.log("Launching game:", gameList.currentGame.title)
+
+            api.memory.set('lastGameIndex', gameList.currentIndex)
+            api.memory.set('lastCollectionIndex', collectionIndex)
+
+            gameList.focus = false
+            gameList.enabled = false
+
             gameList.currentGame.launch()
+            restoreTimer.start()
+        }
+    }
+
+    Timer {
+        id: restoreTimer
+        interval: 100
+        repeat: false
+        onTriggered: {
+            console.log("Restoring focus after game exit")
+            gameList.enabled = true
+            gameList.focus = true
+
+            var lastIndex = api.memory.get('lastGameIndex')
+            if (lastIndex !== undefined && lastIndex >= 0 && lastIndex < gameList.count) {
+                gameList.currentIndex = lastIndex
+                gameList.positionViewAtIndex(lastIndex, ListView.Center)
+            }
         }
     }
 }

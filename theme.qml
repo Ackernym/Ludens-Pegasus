@@ -23,6 +23,13 @@ FocusScope {
         id: soundManager
     }
 
+    onInCollectionViewChanged: {
+        if (!inCollectionView) {
+            collectionView.focus = true
+            collectionView.forceActiveFocus()
+        }
+    }
+
     function toggleThemeMode(lightTheme) {
         if (lightTheme) {
             root.bgPrimary = "#dddddd"
