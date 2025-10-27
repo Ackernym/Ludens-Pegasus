@@ -328,3 +328,47 @@ function formatShortDate(dateString) {
         return dateString;
     }
 }
+
+
+
+
+function getGameCollectionShortName(gameData) {
+    if (!gameData) return "";
+
+    if (gameData.collections && gameData.collections.count > 0) {
+        var firstCollection = gameData.collections.get(0);
+        if (firstCollection && firstCollection.shortName) {
+            return firstCollection.shortName;
+        }
+    }
+
+    if (typeof api !== 'undefined' && api.collections) {
+        for (var i = 0; i < api.collections.count; i++) {
+            var collection = api.collections.get(i);
+            if (collection && collection.games) {
+                for (var j = 0; j < collection.games.count; j++) {
+                    var game = collection.games.get(j);
+                    if (game && gameData) {
+                        if (game.title === gameData.title &&
+                            game.releaseYear === gameData.releaseYear) {
+                            return collection.shortName;
+                            }
+                    }
+                }
+            }
+        }
+    }
+
+    return "";
+}
+
+function getSystemImagePath(shortName) {
+    if (!shortName || shortName === "") return "";
+    return "assets/images/systems/" + shortName.toLowerCase() + ".png";
+}
+
+function shouldShowSystemIcon(currentCollectionShortName) {
+    if (!currentCollectionShortName) return false;
+    var shortName = currentCollectionShortName.toLowerCase();
+    return shortName === "history" || shortName === "favorite";
+}

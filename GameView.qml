@@ -130,6 +130,8 @@ FocusScope {
         focus: true
         collectionIndex: gameRoot.collectionIndex
 
+        property string currentCollectionShortName: collection ? collection.shortName : ""
+
         Keys.onPressed: {
             if (api.keys.isCancel(event)) {
                 event.accepted = true

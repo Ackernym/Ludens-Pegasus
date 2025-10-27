@@ -7,6 +7,7 @@ ListView {
 
     property var currentGame: currentItem ? currentItem.gameData : null
     property int collectionIndex: 0
+    property string currentCollectionShortName: ""
 
     clip: true
     spacing: 10 * vpx
@@ -142,7 +143,7 @@ ListView {
                 }
             }
 
-            Item {
+            /*Item {
                 width: isCurrent ? (parent.width - parent.spacing - height) * 0.60 : parent.width - parent.spacing - height
                 height: parent.height
 
@@ -215,6 +216,189 @@ ListView {
                         anchors.fill: favoriteIcon
                         source: favoriteIcon
                         color: root.getHueColor(collectionIndex)
+                    }
+
+                    layer.enabled: true
+                    layer.effect: DropShadow {
+                        transparentBorder: true
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 2
+                        samples: 5
+                        color: "#40000000"
+                    }
+                }
+
+                Item {
+                    id: systemIndicatorContainer
+                    width: 35 * vpx
+                    height: 35 * vpx
+                    visible: Utils.shouldShowSystemIcon(list.currentCollectionShortName) &&
+                    Utils.getGameCollectionShortName(gameData) !== ""
+
+                    Rectangle {
+                        id: systemBackground
+                        anchors.fill: parent
+                        color: "#80000000"
+                        radius: width / 2
+                    }
+
+                    Image {
+                        id: systemIcon
+                        anchors.centerIn: parent
+                        width: parent.width * 0.75
+                        height: parent.height * 0.75
+                        source: Utils.getSystemImagePath(Utils.getGameCollectionShortName(gameData))
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                        mipmap: true
+                        asynchronous: true
+
+                        onStatusChanged: {
+                            if (status === Image.Error || status === Image.Null) {
+                                visible = false
+                            } else if (status === Image.Ready) {
+                                visible = true
+                            }
+                        }
+                    }
+
+                    layer.enabled: true
+                    layer.effect: DropShadow {
+                        transparentBorder: true
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 2
+                        samples: 5
+                        color: "#40000000"
+                    }
+                }
+            }*/
+
+            Item {
+                width: isCurrent ? (parent.width - parent.spacing - height) * 0.60 : parent.width - parent.spacing - height
+                height: parent.height
+
+                Text {
+                    anchors {
+                        left: parent.left
+                        right: parent.right
+                        verticalCenter: parent.verticalCenter
+                    }
+                    text: Utils.cleanGameTitle(modelData.title)
+
+                    font {
+                        family: global.fonts.sans
+                        pixelSize: isCurrent ? 20 * vpx : 14 * vpx
+                        bold: isCurrent
+                    }
+                    color: isCurrent ? "#ffffff" : textPrimary
+                    verticalAlignment: Text.AlignVCenter
+                    elide: Text.ElideRight
+
+                    Behavior on color {
+                        ColorAnimation { duration: 150 }
+                    }
+                    Behavior on font.pixelSize {
+                        NumberAnimation { duration: 150 }
+                    }
+
+                    layer.enabled: isCurrent
+                    layer.effect: DropShadow {
+                        transparentBorder: true
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 2
+                        samples: 5
+                        color: "#80000000"
+                    }
+                }
+
+                Item {
+                    id: favoriteIndicatorContainer
+                    anchors {
+                        left: parent.left
+                        bottom: parent.bottom
+                        bottomMargin: 5 * vpx
+                    }
+                    width: 33 * vpx
+                    height: 33 * vpx
+                    visible: gameData.favorite && isCurrent
+
+                    Rectangle {
+                        id: favoriteBackground
+                        anchors.fill: parent
+                        color: "#80000000"
+                        radius: width / 2
+                    }
+
+                    Image {
+                        id: favoriteIcon
+                        anchors.centerIn: parent
+                        width: parent.width * 0.75
+                        height: parent.height * 0.75
+                        source: "assets/images/icons/favorite.svg"
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                        mipmap: true
+                        visible: false
+                    }
+
+                    ColorOverlay {
+                        anchors.fill: favoriteIcon
+                        source: favoriteIcon
+                        color: root.getHueColor(collectionIndex)
+                    }
+
+                    layer.enabled: true
+                    layer.effect: DropShadow {
+                        transparentBorder: true
+                        horizontalOffset: 1
+                        verticalOffset: 1
+                        radius: 2
+                        samples: 5
+                        color: "#40000000"
+                    }
+                }
+
+                Item {
+                    id: systemIndicatorContainer
+                    anchors {
+                        left: favoriteIndicatorContainer.right
+                        leftMargin: 8 * vpx
+                        bottom: parent.bottom
+                        bottomMargin: 5 * vpx
+                    }
+                    width: 33 * vpx
+                    height: 33 * vpx
+                    visible: isCurrent && Utils.shouldShowSystemIcon(list.currentCollectionShortName) &&
+                    Utils.getGameCollectionShortName(gameData) !== ""
+
+                    Rectangle {
+                        id: systemBackground
+                        anchors.fill: parent
+                        color: "#80000000"
+                        radius: width / 2
+                    }
+
+                    Image {
+                        id: systemIcon
+                        anchors.centerIn: parent
+                        width: parent.width * 0.75
+                        height: parent.height * 0.75
+                        source: Utils.getSystemImagePath(Utils.getGameCollectionShortName(gameData))
+                        fillMode: Image.PreserveAspectFit
+                        smooth: true
+                        mipmap: true
+                        asynchronous: true
+
+                        onStatusChanged: {
+                            if (status === Image.Error || status === Image.Null) {
+                                visible = false
+                            } else if (status === Image.Ready) {
+                                visible = true
+                            }
+                        }
                     }
 
                     layer.enabled: true
