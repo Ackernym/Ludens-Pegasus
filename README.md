@@ -1,6 +1,6 @@
 # Ludens
 
-- Ludens — a minimalist theme for Pixl-OS, inspired by [Ludo Frontend](https://ludo.libretro.com/) and focused on clean visuals and smooth navigation.
+- Ludens — a minimalist theme for Pixl-OS.
 
 ![screen0](https://github.com/ZagonAb/Ludens/blob/73b643c5efbea114eb262a86c95d629307d6bbbf/.meta/screenshots/screen0.png)
 
