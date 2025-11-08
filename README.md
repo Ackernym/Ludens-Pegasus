@@ -12,7 +12,7 @@
 ## 🧩 Inspiration
 
 **Ludens** takes visual inspiration from [Ludo Frontend](https://ludo.libretro.com), an open-source game launcher developed by the **Libretro Team**.  
-It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** environment, adapting its design language for a smooth and modern user experience.
+It reimagines Ludo’s minimalist look and feel within the **Pixl-OS** environment, adapting its design language for a smooth and modern user experience.
 
 ---
 
@@ -29,10 +29,6 @@ It reimagines Ludo’s minimalist look and feel within the **Pegasus Frontend** 
   These assets may be used, modified, and redistributed with proper attribution.
 
 ---
-
-## Installation
-
-[Download](https://github.com/ZagonAb/Ludens/archive/refs/heads/main.zip) and extract the theme to your [theme directory](http://pegasus-frontend.org/docs/user-guide/installing-themes). You can then select it from the Pegasus settings menu.
 
 ## 📜 License
 
