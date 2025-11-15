@@ -20,48 +20,57 @@ Item {
         height: parent.height * 0.4
         color: root.getHueColor(collectionIndex)
 
+
         Image {
+            id: gameImage
             anchors.fill: parent
-            source: getGameDetailImage()
             fillMode: Image.PreserveAspectFit
             smooth: true
             asynchronous: true
 
-            function getGameDetailImage() {
-                if (!game) return "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
+            property var assetPriority: ["fanart", "screenshot", "boxFront", "logo"]
+            property int currentAssetIndex: 0
 
-                var assets = game.assets;
+            Component.onCompleted: {
+                loadNextAsset()
+            }
 
-                if (assets.background && assets.background !== "") return assets.background;
-                if (assets.screenshot && assets.screenshot !== "") return assets.screenshot;
-                if (assets.titlescreen && assets.titlescreen !== "") return assets.titlescreen;
-                if (assets.boxFront && assets.boxFront !== "") return assets.boxFront;
-                if (assets.banner && assets.banner !== "") return assets.banner;
-                if (assets.logo && assets.logo !== "") return assets.logo;
-                return "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
+            function loadNextAsset() {
+                if (!game) {
+                    source = "assets/images/PIXL-OS/icon_0.png"
+                    return
+                }
+
+                while (currentAssetIndex < assetPriority.length) {
+                    var assetName = assetPriority[currentAssetIndex]
+                    var assetValue = game.assets[assetName]
+
+                    if (assetValue && assetValue !== "") {
+                        source = assetValue
+                        return
+                    }
+                    currentAssetIndex++
+                }
+
+                source = "assets/images/PIXL-OS/icon_0.png"
             }
 
             onStatusChanged: {
                 if (status === Image.Error) {
-                    //console.log("GameDetails image failed for:", game ? game.title : "unknown");
-                    if (source === game.assets.background && game.assets.screenshot) {
-                        source = game.assets.screenshot;
-                    } else if (source === game.assets.screenshot && game.assets.titlescreen) {
-                        source = game.assets.titlescreen;
-                    } else if (source === game.assets.titlescreen && game.assets.boxFront) {
-                        source = game.assets.boxFront;
-                    } else if (source === game.assets.boxFront && game.assets.banner) {
-                        source = game.assets.banner;
-                    } else if (source === game.assets.banner && game.assets.logo) {
-                        source = game.assets.logo;
-                    } else {
-                        source = "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
-                    }
-                } else if (status === Image.Ready) {
-                    //console.log("GameDetails image loaded successfully for:", game ? game.title : "unknown");
+                    currentAssetIndex++
+                    loadNextAsset()
+                }
+            }
+
+            Connections {
+                target: details
+                function onGameChanged() {
+                    gameImage.currentAssetIndex = 0
+                    gameImage.loadNextAsset()
                 }
             }
         }
+
 
         Rectangle {
             anchors {
