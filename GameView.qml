@@ -380,7 +380,6 @@ FocusScope {
             if (currentGame) {
                 var wasFavorite = currentGame.favorite
                 currentGame.favorite = !currentGame.favorite
-                //console.log("Game favorite status toggled:", currentGame.title, "Favorite:", currentGame.favorite)
                 currentIndexChanged()
                 if (currentGame.favorite) {
                     soundManager.playNotice()
@@ -542,16 +541,27 @@ FocusScope {
 
     function launchGame() {
         if (gameList.currentGame) {
-            //console.log("Launching game:", gameList.currentGame.title)
-
+            console.log("🎮 Launching game:", gameList.currentGame.title)
             api.memory.set('lastGameIndex', gameList.currentIndex)
             api.memory.set('lastCollectionIndex', collectionIndex)
-
+            api.memory.set('gameLaunching', true)
             gameList.focus = false
             gameList.enabled = false
+            console.log("⬅️ Exiting GameView before launch")
+            backRequested()
+            launchDelayTimer.start()
+        }
+    }
 
-            gameList.currentGame.launch()
-            restoreTimer.start()
+    Timer {
+        id: launchDelayTimer
+        interval: 100
+        repeat: false
+        onTriggered: {
+            if (gameList.currentGame) {
+                console.log("🚀 Actually launching game now")
+                gameList.currentGame.launch()
+            }
         }
     }
 
@@ -560,7 +570,7 @@ FocusScope {
         interval: 100
         repeat: false
         onTriggered: {
-            //console.log("Restoring focus after game exit")
+            console.log("🔄 Restoring focus after game exit")
             gameList.enabled = true
             gameList.focus = true
 
@@ -569,6 +579,8 @@ FocusScope {
                 gameList.currentIndex = lastIndex
                 gameList.positionViewAtIndex(lastIndex, ListView.Center)
             }
+
+            api.memory.set('gameLaunching', false)
         }
     }
 }

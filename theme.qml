@@ -118,7 +118,10 @@ FocusScope {
         collectionIndex: collectionView.actualCurrentIndex
 
         onBackRequested: {
+            //console.log("Back requested from GameView")
             root.inCollectionView = false
+            collectionView.focus = true
+            collectionView.forceActiveFocus()
         }
     }
 
@@ -156,6 +159,15 @@ FocusScope {
             if (savedLightness !== undefined) hueLightness = savedLightness
 
                 loadThemeSettings()
+
+                var wasLaunching = api.memory.get('gameLaunching')
+                if (wasLaunching) {
+                    //console.log("🔙 Returning from game launch, staying in CollectionView")
+                    root.inCollectionView = false
+                    api.memory.set('gameLaunching', false)
+                    collectionView.focus = true
+                    collectionView.forceActiveFocus()
+                }
     }
 
     onHueSaturationChanged: {

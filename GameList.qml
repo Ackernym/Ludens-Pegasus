@@ -228,7 +228,7 @@ ListView {
 
                     onStatusChanged: {
                         if (status === Image.Error) {
-                            console.log("Image failed for game:", modelData.title, "Source:", source);
+                            //console.log("Image failed for game:", modelData.title, "Source:", source);
                             if (source === modelData.assets.boxFront && modelData.assets.screenshot) {
                                 source = modelData.assets.screenshot;
                             } else if (source === modelData.assets.screenshot && modelData.assets.titlescreen) {
@@ -241,7 +241,7 @@ ListView {
                                 source = "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
                             }
                         } else if (status === Image.Ready) {
-                            console.log("Image loaded successfully for game:", modelData.title);
+                            //console.log("Image loaded successfully for game:", modelData.title);
                         }
                     }
                 }
@@ -354,8 +354,9 @@ ListView {
                     }
                     width: 33 * vpx
                     height: 33 * vpx
-                    visible: isCurrent && Utils.shouldShowSystemIcon(list.currentCollectionShortName) &&
-                    Utils.getGameCollectionShortName(gameData) !== ""
+                    visible: isCurrent
+                    && Utils.shouldShowSystemIcon(list.currentCollectionShortName)
+                    && Utils.getGameCollectionShortName(gameData) !== ""
 
                     Rectangle {
                         id: systemBackground
@@ -369,7 +370,9 @@ ListView {
                         anchors.centerIn: parent
                         width: parent.width * 0.75
                         height: parent.height * 0.75
-                        source: Utils.getSystemImagePath(Utils.getGameCollectionShortName(gameData))
+                        source: Utils.getSystemImagePath(
+                            Utils.getGameCollectionShortName(gameData)
+                        )
                         fillMode: Image.PreserveAspectFit
                         smooth: true
                         mipmap: true
