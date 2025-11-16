@@ -223,6 +223,7 @@ ListView {
                     }
                     fillMode: Image.PreserveAspectFit
                     smooth: true
+                    mipmap: true
                     asynchronous: true
 
                     onStatusChanged: {
@@ -342,7 +343,8 @@ ListView {
                     }
                 }
 
-                Item {
+                //there's no need
+                /*Item {
                     id: systemIndicatorContainer
                     anchors {
                         left: favoriteIndicatorContainer.right
@@ -391,12 +393,13 @@ ListView {
                         samples: 5
                         color: "#40000000"
                     }
-                }
+                }*/
 
                 Item {
                     id: systemTextContainer
                     anchors {
-                        left: systemIndicatorContainer.right
+                        left: favoriteIndicatorContainer.right
+                        //left: systemIndicatorContainer.right
                         leftMargin: 2 * vpx
                         bottom: parent.bottom
                         bottomMargin: 5 * vpx

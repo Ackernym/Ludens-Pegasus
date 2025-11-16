@@ -26,6 +26,7 @@ Item {
             anchors.fill: parent
             fillMode: Image.PreserveAspectFit
             smooth: true
+            mipmap: true
             asynchronous: true
 
             property var assetPriority: ["fanart", "screenshot", "boxFront", "logo"]
