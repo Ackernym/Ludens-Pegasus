@@ -512,6 +512,14 @@ FocusScope {
         }
     }
 
+    NoiseEffect {
+        id: noiSe
+        anchors.fill: parent
+        noiseIntensity: 0.03
+        noiseOpacity: 0.5
+        visible: gameRoot.panelsBlurred || gameRoot.letterNavigationBlur
+    }
+
     RetroAchievementsView {
         id: retroAchievementsView
         z: 100

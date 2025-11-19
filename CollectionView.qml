@@ -123,6 +123,7 @@ FocusScope {
         panelVisible: true
         focus: false
         collectionListView: collectionList
+        z: 1002
     }
 
     ListView {
@@ -251,6 +252,14 @@ FocusScope {
                 soundManager.playCancel()
             }
         }
+    }
+
+    NoiseEffect {
+        id: noiSe
+        anchors.fill: parent
+        noiseIntensity: 0.03
+        noiseOpacity: 0.5
+        visible: globalColorConfig.focus
     }
 
     Column {
