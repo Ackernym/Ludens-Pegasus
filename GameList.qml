@@ -218,7 +218,7 @@ ListView {
                         } else if (modelData.assets.banner && modelData.assets.banner !== "") {
                             return modelData.assets.banner;
                         } else {
-                            return "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
+                            return "assets/images/Pegasus-Frontend/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
                         }
                     }
                     fillMode: Image.PreserveAspectFit
@@ -238,7 +238,7 @@ ListView {
                             } else if (source === modelData.assets.logo && modelData.assets.banner) {
                                 source = modelData.assets.banner;
                             } else {
-                                source = "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
+                                source = "assets/images/Pegasus-Frontend/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
                             }
                         } else if (status === Image.Ready) {
                             //console.log("Image loaded successfully for game:", modelData.title);

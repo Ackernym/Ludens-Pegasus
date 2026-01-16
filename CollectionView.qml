@@ -103,9 +103,9 @@ FocusScope {
             iconSource: "" /*Utils.getFallbackPixlOSIcon() //random images*/
             Image {
                 anchors.centerIn: parent
-                width: parent.width * 0.84
-                height: parent.height * 0.84
-                source: "assets/images/PIXL-OS/icon_0.png"
+                width: parent.width * 0.64
+                height: parent.height * 0.64
+                source: "assets/images/Pegasus-Frontend/icon_0.png"
                 fillMode: Image.PreserveAspectFit
                 mipmap: true
             }

@@ -38,7 +38,7 @@ Item {
 
             function loadNextAsset() {
                 if (!game) {
-                    source = "assets/images/PIXL-OS/icon_0.png"
+                    source = "assets/images/Pegasus-Frontend/icon_0.png"
                     return
                 }
 
@@ -53,7 +53,7 @@ Item {
                     currentAssetIndex++
                 }
 
-                source = "assets/images/PIXL-OS/icon_0.png"
+                source = "assets/images/Pegasus-Frontend/icon_0.png"
             }
 
             onStatusChanged: {

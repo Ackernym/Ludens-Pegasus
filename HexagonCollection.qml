@@ -31,7 +31,7 @@ Item {
 
             onStatusChanged: {
                 if (status === Image.Error) {
-                    source = "assets/images/PIXL-OS/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
+                    source = "assets/images/Pegasus-Frontend/icon_0.png" /*Utils.getFallbackPixlOSIcon() //random images*/
                 }
             }
         }

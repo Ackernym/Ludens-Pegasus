@@ -113,7 +113,7 @@ FocusScope {
 
                 onStatusChanged: {
                     if (status === Image.Error) {
-                        source = "assets/images/PIXL-OS/icon_0.png"
+                        source = "assets/images/Pegasus-Frontend/icon_0.png"
                     }
                 }
 
