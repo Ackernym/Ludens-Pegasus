@@ -29,7 +29,7 @@ Item {
             mipmap: true
             asynchronous: true
 
-            property var assetPriority: ["fanart", "screenshot", "boxFront", "logo"]
+            property var assetPriority: ["background", "screenshot", "boxFront", "logo"]
             property int currentAssetIndex: 0
 
             Component.onCompleted: {
