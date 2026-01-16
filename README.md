@@ -6,8 +6,6 @@
 
 ![screen1](https://github.com/ZagonAb/Ludens/blob/89d15f5e495551f66823c7a679f683a7c88f6c3c/.meta/screenshots/screen1.png)
 
-![screen2](https://github.com/ZagonAb/Ludens/blob/89d15f5e495551f66823c7a679f683a7c88f6c3c/.meta/screenshots/screen2.png)
-
 
 ## 🧩 Inspiration
 
