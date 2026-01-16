@@ -389,7 +389,7 @@ function shouldShowSystemIcon(currentCollectionShortName) {
 function getRandomPixlOSIcon() {
     var totalIcons = 13;
     var randomIndex = Math.floor(Math.random() * totalIcons);
-    var iconPath = "assets/images/PIXL-OS/icon_" + randomIndex + ".png";
+    var iconPath = "assets/images/Pegasus-Frontend/icon_" + randomIndex + ".png";
     return iconPath;
 }
 
@@ -402,7 +402,7 @@ function getCollectionIcon(collectionName) {
 
     var totalIcons = 13;
     var iconIndex = Math.abs(hash) % totalIcons;
-    var iconPath = "assets/images/PIXL-OS/icon_" + iconIndex + ".png";
+    var iconPath = "assets/images/Pegasus-Frontend/icon_" + iconIndex + ".png";
     return iconPath;
 }
 
@@ -413,6 +413,6 @@ function getFallbackPixlOSIcon() {
 
     var totalIcons = 13;
     var randomIndex = Math.floor(Math.random() * totalIcons);
-    fallbackIcon = "assets/images/PIXL-OS/icon_" + randomIndex + ".png";
+    fallbackIcon = "assets/images/Pegasus-Frontend/icon_" + randomIndex + ".png";
     return fallbackIcon;
 }
