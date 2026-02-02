@@ -8,7 +8,7 @@ Item {
 
     property var game
     property int collectionIndex: 0
-    property bool hasPlayStats: game && (game.playCount > 0 || game.playTime > 0 || (game.lastPlayed && !isNaN(game.lastPlayed.getTime())))
+    property bool hasPlayStats: game && (game.playCount > 0 || (game.lastPlayed && !isNaN(game.lastPlayed.getTime())))
 
     Rectangle {
         id: screenshotArea
@@ -446,7 +446,7 @@ Item {
 
 
                     Rectangle {
-                        width: (parent.width - parent.spacing * 3) / 4
+                        width: (parent.width - parent.spacing * 3) / 3
                         height: 40 * vpx
                         radius: 8 * vpx
                         color: "#66000000"
@@ -481,7 +481,7 @@ Item {
                     }
 
                     Rectangle {
-                        width: (parent.width - parent.spacing * 3) / 4
+                        width: (parent.width - parent.spacing * 3) / 3
                         height: 40 * vpx
                         radius: 8 * vpx
                         color: "#66000000"
@@ -516,42 +516,7 @@ Item {
                     }
 
                     Rectangle {
-                        width: (parent.width - parent.spacing * 3) / 4
-                        height: 40 * vpx
-                        radius: 8 * vpx
-                        color: "#66000000"
-                        visible: game && game.playTime > 0
-
-                        Column {
-                            anchors.centerIn: parent
-                            spacing: 1 * vpx
-
-                            Text {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                text: "PLAY TIME"
-                                font {
-                                    family: global.fonts.sans
-                                    pixelSize: 10 * vpx
-                                    bold: true
-                                }
-                                color: "#a1a1a1"
-                            }
-
-                            Text {
-                                anchors.horizontalCenter: parent.horizontalCenter
-                                text: game ? Utils.formatPlayTime(game.playTime) : ""
-                                font {
-                                    family: global.fonts.sans
-                                    pixelSize: 16 * vpx
-                                    bold: true
-                                }
-                                color: root.getHueColor(collectionIndex)
-                            }
-                        }
-                    }
-
-                    Rectangle {
-                        width: (parent.width - parent.spacing * 3) / 4
+                        width: (parent.width - parent.spacing * 3) / 3
                         height: 40 * vpx
                         radius: 8 * vpx
                         color: "#66000000"
